@@ -10,6 +10,7 @@ import UserBillPage from "./components/pages/UserBill";
 import ConeAdminPage from "./components/pages/ConeAdminPage";
 import UserConePage from "./components/pages/UserConePage";
 import UserBillAnalysisPage from "./components/pages/UserBillAnalysis";
+import ConeManager from "./components/pages/ConeAdminPage";
 
 const ProtectedRoute = ({ children }) => {
   const isLoggedIn = !!localStorage.getItem('token'); // Check if user is logged in
@@ -26,6 +27,8 @@ const App = () => {
         <Route path="/customer-entry" element={<CustomerEntry />} />
 
         <Route path="/manage-users" element={<ManageUsers />} />
+
+        <Route path="/manage-cones" element={<ConeManager />} />
 
         <Route path="/generate-bill" element={<BillForm />} />
         <Route path="/analysis" element={<AnalysisPage />} />

@@ -36,8 +36,13 @@ function AdminDashboard() {
                             👥 Manage Cutomers
                         </button>
                     </Link>
+                    <Link to="/manage-cones">
+                        <button className="px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-yellow-700 transition">
+                            🧵 Manage Cone
+                        </button>
+                    </Link>
                 </div>
-         ``   </div>
+           </div>
 
         </>
     )

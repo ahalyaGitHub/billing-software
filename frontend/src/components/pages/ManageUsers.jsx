@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import Navbar from '../Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -26,18 +28,19 @@ function ManageUsers() {
       setUsers(res.data);
     } catch (err) {
       console.error('Error fetching users:', err);
+      toast.error("Failed to fetch users.");
     }
   };
 
   const handleDelete = async (userId) => {
     try {
       await axios.delete(`http://localhost:5000/user/${userId}`);
-      alert("User deleted successfully.");
+      toast.success("User deleted successfully.");
       fetchUsers();
       setDeleteUserId(null);
     } catch (err) {
       console.error("Error deleting user:", err);
-      alert("Failed to delete user.");
+      toast.error("Failed to delete user.");
     }
   };
 
@@ -59,12 +62,12 @@ function ManageUsers() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:5000/user/${editUserId}`, editFormData);
-      alert("User updated successfully.");
+      toast.success("User updated successfully.");
       fetchUsers();
       setEditUserId(null);
     } catch (err) {
       console.error("Error updating user:", err);
-      alert("Failed to update user.");
+      toast.error("Failed to update user.");
     }
   };
 
@@ -231,6 +234,9 @@ function ManageUsers() {
           </div>
         </div>
       )}
+
+      {/* Toast Container */}
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
     </>
   );
 }

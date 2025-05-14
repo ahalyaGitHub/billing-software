@@ -7,6 +7,7 @@ import { FaTrash, FaEdit, FaFilePdf, FaDownload, FaCheck } from "react-icons/fa"
 import Tooltip from "@mui/material/Tooltip";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import Navbar from "../Navbar";
 
 const Dashboard = () => {
   const [bills, setBills] = useState([]);
@@ -183,12 +184,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <nav className="bg-fuchsia-700 text-white py-6 shadow-md font-mono">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold">Ahalya Traders</Link>
-          <Link to="/analysis" className="text-xl font-bold">Analysis</Link>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="min-h-screen bg-fuchsia-50 p-6 font-mono">
         <h1 className="text-4xl font-bold text-fuchsia-800 mb-8 text-center"> 📊 Billing Dashboard</h1>
