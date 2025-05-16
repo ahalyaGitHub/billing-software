@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import AdminDashboard from "./adminDashboard";
-import UserDashboard from "./userDashboard"; // make sure this exists
+import AdminDashboard from "./AdminDashboard";
+import UserDashboard from "./UserDashboard"; // make sure this exists
 
 const Home = () => {
   const navigate = useNavigate();
