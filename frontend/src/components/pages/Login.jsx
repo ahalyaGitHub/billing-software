@@ -16,8 +16,8 @@ const Login = () => {
 
     const endpoint =
       role === "admin"
-        ? "http://localhost:5000/admin/login"
-        : "http://localhost:5000/user/login";
+        ? "https://billing-software-4dft.onrender.com/admin/login"
+        : "https://billing-software-4dft.onrender.com/user/login";
 
     try {
       const res = await axios.post(endpoint, { email, password });

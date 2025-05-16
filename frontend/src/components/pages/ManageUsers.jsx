@@ -24,7 +24,7 @@ function ManageUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/user/');
+      const res = await axios.get('https://billing-software-4dft.onrender.com/user/');
       setUsers(res.data);
     } catch (err) {
       console.error('Error fetching users:', err);
@@ -34,7 +34,7 @@ function ManageUsers() {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/user/${userId}`);
+      await axios.delete(`https://billing-software-4dft.onrender.com/user/${userId}`);
       toast.success("User deleted successfully.");
       fetchUsers();
       setDeleteUserId(null);
@@ -61,7 +61,7 @@ function ManageUsers() {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/user/${editUserId}`, editFormData);
+      await axios.put(`https://billing-software-4dft.onrender.com/user/${editUserId}`, editFormData);
       toast.success("User updated successfully.");
       fetchUsers();
       setEditUserId(null);

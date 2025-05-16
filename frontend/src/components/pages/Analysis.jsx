@@ -13,7 +13,7 @@ const AnalysisPage = () => {
     useEffect(() => {
         const fetchBillingData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/bills/');
+                const response = await axios.get('https://billing-software-4dft.onrender.com/bills/');
                 console.log(response.data);  // Log the response to ensure the structure is correct
                 setBills(response.data.bills);  // Ensure we are accessing 'bills' correctly
                 setLoading(false);

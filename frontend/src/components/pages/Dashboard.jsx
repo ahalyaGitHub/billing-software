@@ -123,7 +123,7 @@ const Dashboard = () => {
   // Update bill in the backend
   const handleUpdateBill = async () => {
     try {
-      await axios.put(`http://localhost:5000/bills/update/${editBill}`, formData);
+      await axios.put(`https://billing-software-4dft.onrender.com/bills/update/${editBill}`, formData);
       setBills(
         bills.map((bill) =>
           bill._id === editBill ? { ...bill, ...formData } : bill
@@ -144,7 +144,7 @@ const Dashboard = () => {
     const fetchBills = async () => {
       console.log("Searching for:", searchTerm);  // Debugging line
       try {
-        const response = await axios.get(`http://localhost:5000/bills?search=${searchTerm}`);
+        const response = await axios.get(`https://billing-software-4dft.onrender.com/bills?search=${searchTerm}`);
         setBills(response.data.bills);
       } catch (error) {
         toast.error("Failed to fetch bills.");
@@ -158,7 +158,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/bills/delete/${id}`);
+      await axios.delete(`https://billing-software-4dft.onrender.com/bills/delete/${id}`);
       setBills(bills.filter((bill) => bill._id !== id));
       toast.success("Bill deleted successfully.");
     } catch (error) {
@@ -169,7 +169,7 @@ const Dashboard = () => {
 
   const handleUpdateStatus = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/bills/update-status/${id}`, { status: newStatus });
+      await axios.put(`https://billing-software-4dft.onrender.com/bills/update-status/${id}`, { status: newStatus });
       setBills(
         bills.map((bill) =>
           bill._id === id ? { ...bill, status: newStatus } : bill

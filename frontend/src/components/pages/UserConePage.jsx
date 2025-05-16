@@ -7,7 +7,7 @@ const UserConePage = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/cones")
+    axios.get("https://billing-software-4dft.onrender.com/cones")
       .then(res => {
         setCones(res.data);
         console.log(res.data);

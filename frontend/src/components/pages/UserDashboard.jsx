@@ -14,7 +14,7 @@ function UserDashboard() {
         const userId = decodedToken.id;
 
         // Fetch user details from backend using _id
-        axios.get(`http://localhost:5000/user/${userId}`)
+        axios.get(`https://billing-software-4dft.onrender.com/user/${userId}`)
           .then((res) => {
             setUserName(res.data.user_name);
           })

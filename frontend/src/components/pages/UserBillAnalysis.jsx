@@ -21,7 +21,7 @@ const UserBillAnalysisPage = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5000/bills/userbills", {
+      const response = await axios.get("https://billing-software-4dft.onrender.com/bills/userbills", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

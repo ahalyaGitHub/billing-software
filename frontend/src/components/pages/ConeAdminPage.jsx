@@ -11,7 +11,7 @@ const ConeManager = () => {
 
   const fetchCones = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/cones");
+      const res = await axios.get("https://billing-software-4dft.onrender.com/cones");
       setCones(res.data);
     } catch (err) {
       setError("Failed to fetch cones.");
@@ -25,7 +25,7 @@ const ConeManager = () => {
   const handleAddCone = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/cones", {
+      const res = await axios.post("https://billing-software-4dft.onrender.com/cones", {
         color,
         availableQuantity: Number(availableQuantity),
       });
@@ -39,7 +39,7 @@ const ConeManager = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/cones/${id}`);
+      await axios.delete(`https://billing-software-4dft.onrender.com/cones/${id}`);
       fetchCones();
     } catch (err) {
       setError("Failed to delete cone.");
@@ -54,7 +54,7 @@ const ConeManager = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/cones/${editingConeId}`, {
+      await axios.put(`https://billing-software-4dft.onrender.com/cones/${editingConeId}`, {
         color,
         availableQuantity: Number(availableQuantity),
       });

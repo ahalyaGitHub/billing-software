@@ -5,7 +5,7 @@ import BillForm from "./components/pages/BillForm";
 import Dashboard from "./components/pages/Dashboard";
 import AnalysisPage from "./components/pages/Analysis";
 import ManageUsers from "./components/pages/ManageUsers";
-import CustomerEntry from "./components/pages/customerEntry";
+import CustomerEntry from "./components/pages/CustomerEntry";
 import UserBillPage from "./components/pages/UserBill";
 import ConeAdminPage from "./components/pages/ConeAdminPage";
 import UserConePage from "./components/pages/UserConePage";

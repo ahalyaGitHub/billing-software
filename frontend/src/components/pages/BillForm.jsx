@@ -19,7 +19,7 @@ const BillForm = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user");
+        const response = await axios.get("https://billing-software-4dft.onrender.com/user");
         
         setCustomers(response.data);
         setFilteredCustomers(response.data);
@@ -93,7 +93,7 @@ const BillForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/bills/create",
+        "https://billing-software-4dft.onrender.com/bills/create",
         formattedBill
       );
 

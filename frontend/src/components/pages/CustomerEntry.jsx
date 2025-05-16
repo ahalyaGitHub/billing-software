@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CustomerEntry = () => {
   const [user_name, setUserName] = useState("");
@@ -18,21 +20,24 @@ const CustomerEntry = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/user/register", {
+      const res = await axios.post("https://billing-software-4dft.onrender.com/user/register", {
         user_name,
         company_name,
         email,
         password,
         phone,
-        address
+        address,
       });
 
       if (res.data) {
-        alert("Customer entry successful!");
-        navigate("/manage-users");  // redirect to user management after entry
+        toast.success("Customer entry successful!");
+        setTimeout(() => {
+          navigate("/manage-users");
+        }, 3000); // wait 3s before redirecting
       }
     } catch (err) {
       setError("Customer entry failed. Email might already be registered.");
+      toast.error("Customer entry failed. Try again.");
     }
   };
 
@@ -111,6 +116,9 @@ const CustomerEntry = () => {
           </form>
         </div>
       </div>
+
+      {/* Toastify container */}
+      <ToastContainer position="top-center" autoClose={3000} />
     </>
   );
 };
